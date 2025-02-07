@@ -1,0 +1,908 @@
+#update expericence
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeanette's Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Fira Code', monospace;
+            background-color: #1e1e2f;
+            color: #c5c6c7;
+            overflow-x: hidden;
+        }
+
+        nav {
+            display: flex;
+            position: sticky; /* Navbar tetap di layar saat scroll */
+            top: 0; /* Menempel di atas layar */
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #282a36;
+        }
+
+        nav .logo {
+            font-weight: 600;
+            font-size: 1.5rem;
+            color: #50fa7b;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #f8f8f2;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #50fa7b;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 100vh; /* Full height of the viewport */
+
+        }
+        .hero h1 {
+            font-size: 3rem;
+            color: #50fa7b;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #c5c6c7;
+            margin-top: 1rem;
+        }
+
+        .hero .btn {
+            margin-top: 2rem;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            color: #282a36;
+            background-color: #50fa7b;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .hero .btn:hover {
+            background-color: #3dc86f;
+            transform: scale(1.1);
+        }
+
+        section {
+            padding: 3rem 2rem;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            color: #50fa7b;
+            margin-bottom: 1.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background-color: #282a36;
+            color: #f8f8f2;
+            font-size: 0.9rem;
+        }
+
+        /* About Section */
+        #about {
+            padding: 4rem 2rem;
+            background-color: #1e1e2f;
+            text-align: center;
+        }
+
+        #about h2 {
+            font-size: 2.5rem;
+            color: #f8f8f2;
+            margin-bottom: 2rem;
+        }
+
+        .about-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .about-photo-container {
+            flex: 1 1 300px;
+            text-align: center;
+        }
+
+        .about-photo {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            border: 4px solid #50fa7b;
+            object-fit: cover;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-text {
+            flex: 2 1 500px;
+            text-align: left;
+            color: #c5c6c7;
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .about-text p {
+            margin-bottom: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            font-size: 1.2rem;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        .social-icon i {
+            font-size: 1.5rem;
+        }
+
+        .social-icon:hover {
+            color: #50fa7b;
+        }
+
+        /* Intro Section */
+        .intro {
+            text-align: center;
+            padding: 3rem 1rem;
+            background: linear-gradient(135deg, #282a36, #1e1e2f);
+            color: #50fa7b;
+            border-top: 2px solid #6272a4;
+            border-bottom: 2px solid #6272a4;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .intro h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #50fa7b;
+        }
+
+        .intro p {
+            font-size: 1.2rem;
+            margin: 0 auto;
+            max-width: 600px;
+            line-height: 1.8;
+            color: #c5c6c7;
+        }
+
+        .intro-btn-container {
+            margin-top: 2rem;
+        }
+
+        .intro-btn {
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            color: #282a36;
+            background-color: #50fa7b;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .intro-btn:hover {
+            background-color: #3dc86f;
+            transform: scale(1.1);
+        }
+
+        /* Details Section */
+        .details {
+            display: none;
+            margin-top: 2rem;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .details-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        .detail-box {
+            width: 300px;
+            background-color: #282a36;
+            border-radius: 8px;
+            padding: 1.5rem;
+            color: #c5c6c7;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .detail-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .detail-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #50fa7b;
+        }
+
+        .detail-box p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Portfolio Section */
+        .portfolio-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .portfolio-box {
+            background-color: #282a36;
+            color: #c5c6c7;
+            border: 2px solid #6272a4;
+            border-radius: 5px;
+            padding: 2rem;
+            text-align: center;
+            width: 250px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .portfolio-box:hover {
+            background-color: #50fa7b;
+            color: #282a36;
+            transform: scale(1.05);
+        }
+
+        .portfolio-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-box p {
+            font-size: 1rem;
+        }
+
+        .portfolio-box a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .portfolio-box a:hover {
+            text-decoration: underline;
+        }
+
+        /* Modal container */
+        .modal {
+            display: none; /* Sembunyikan secara default */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Background semi-transparent */
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Konten modal */
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 500px;
+            width: 80%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Tombol close */
+        .close-btn {
+            font-size: 20px;
+            font-weight: bold;
+            color: #aaa;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            color: #000;
+        }
+
+        .modal-content button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .modal-content button:hover {
+            background-color: #218838;
+        }
+
+
+        /* Achievements Section */
+        .achievements-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .achievement-item {
+            background-color: #282a36;
+            border: 2px solid #6272a4;
+            border-radius: 5px;
+            padding: 1.5rem;
+            color: #c5c6c7;
+        }
+
+        .achievement-item h3 {
+            font-size: 1.3rem;
+            color: #50fa7b;
+        }
+
+        /* Section Styling */
+        /* Section Styling */
+        #organizational-experience {
+            padding: 3rem 2rem;
+            background-color: #1e1e2f;
+            color: #c5c6c7;
+            text-align: center;
+        }
+
+        #organizational-experience h2 {
+            font-size: 2rem;
+            color: #50fa7b;
+            margin-bottom: 2rem;
+        }
+
+        /* Grid Styling */
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        /* Card Styling */
+        .experience-card {
+            background-color: #282a36;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .experience-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #50fa7b;
+        }
+
+        .experience-card h3 span {
+            font-size: 1rem;
+            color: #6272a4;
+        }
+
+        .experience-card ul {
+            list-style: none;
+            padding-left: 1rem;
+        }
+
+        .experience-card ul li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.8rem;
+            color: #c5c6c7;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .experience-card ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #50fa7b;
+            font-size: 1.2rem;
+        }
+
+        /* Profile Image Styling */
+        .profile-img {
+            width: 100%;
+            height: 200px;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            object-fit: cover;
+        }
+
+        /* Button Styling */
+        .learn-more-btn {
+            background-color: #50fa7b;
+            color: #1e1e2f;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .learn-more-btn:hover {
+            background-color: #3ddc5b;
+        }
+
+        /* Details Section */
+        .details {
+            display: none;
+            margin-top: 1rem;
+            border-top: 1px solid #6272a4;
+            padding-top: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .experience-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .experience-card {
+                width: 90%;
+            }
+        }
+        /* Modal Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            width: 90%;
+            text-align: left;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 18px;
+            color: #aaa;
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            color: #000;
+        }
+
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+            list-style-type: disc;
+            color: #333;
+        }
+
+        /* Responsiveness */
+        @media (max-width: 992px) {
+            .experience-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .experience-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Contact Section */
+        .contact-section {
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        .contact-section h2 {
+            font-size: 2rem;
+            color: #50fa7b;
+            margin-bottom: 1rem;
+        }
+
+        .contact-section p {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            color: #c5c6c7;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #282a36;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form label {
+            display: block;
+            font-size: 1rem;
+            color: #50fa7b;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 2px solid #6272a4;
+            border-radius: 5px;
+            background-color: #1e1e2f;
+            color: #c5c6c7;
+            font-size: 1rem;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #50fa7b;
+            outline: none;
+        }
+
+        .contact-form button {
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            color: #282a36;
+            background-color: #50fa7b;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #3dc86f;
+            transform: scale(1.1);
+        }
+            /* Responsive Design */
+        @media (max-width: 768px) {
+            .about-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-photo {
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Jeanette Walangitan</div>
+        <ul>
+            <li><a href="#home">home</a></li>
+            <li><a href="#about">about</a></li>
+            <li><a href="#achievements">achievements</a></li>
+            <li><a href="#portfolio">portfolio</a></li>
+            <li><a href="#organizational-experience">experiences</a></li>
+            <li><a href="#contact">contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <h1>{ "Hello World!" }</h1>
+        <p>// Hi, I'm Jeanette, a creative programmer and designer</p>
+        <button class="btn" >Meet Me</button>
+    </section>
+
+    <section class="intro">
+        <h1>Welcome to My World</h1>
+        <p>"The best way to predict the future is to create it." <br>– Peter Drucker –</p>
+        <div class="intro-btn-container">
+            <button class="btn intro-btn" id="learn-more-btn">Learn More</button>
+        </div>
+
+        <div class="details" id="hidden-details">
+            <div class="details-container">
+                <div class="detail-box">
+                    <h3>Informatics Enthusiast</h3>
+                    <p>Explore my interests in digital innovation, programming, and problem-solving as a passionate Informatics student.</p>
+                </div>
+                <div class="detail-box">
+                    <h3>Creative Explorer</h3>
+                    <p>Explore my digital designs, illustrations, and content creation projects that showcase my artistic flair.</p>
+                </div>
+                <div class="detail-box">
+                    <h3>Adaptability & Growth</h3>
+                    <p>Discover my journey of learning and growing through diverse roles in student organizations, where I’ve developed valuable skills and embraced new challenges.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-container">
+            <div class="about-photo-container">
+                <img src="me.jpg" alt="Jeanette Walangitan" class="about-photo">
+            </div>
+            <div class="about-text">
+                <p>
+                    Hi there! I'm Jeanette, an Informatics student with a deep passion for creativity and innovation. From crafting captivating designs to weaving compelling narratives, I enjoy bringing ideas to life in ways that inspire and connect with people.
+                    <br><br>As a digital creator and freelance professional on Fiverr, I specialize in creating visual stories and unique solutions tailored to my clients' needs. Beyond work, I thrive on exploring challenges, learning new skills, and embracing diverse experiences that shape my growth.
+                    <br><br>Whether it's through design, writing, or coding, my goal is to blend creativity and technology to make a meaningful impact. Let’s collaborate and create something extraordinary together!
+                </p>
+                <div class="social-links">
+                    <a href="https://instagram.com/yourusername" target="_blank" class="social-icon">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </a>
+                    <a href="https://linkedin.com/in/yourusername" target="_blank" class="social-icon">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://fiverr.com/yourusername" target="_blank" class="social-icon">
+                        <i class="fab fa-fiverr"></i> Fiverr
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+
+    <section id="achievements">
+        <h2>achievements</h2>
+        <div class="achievements-container">
+            <div class="achievement-item">
+                <h3>First Place in The Poster Design Competition</h3>
+                <p>Got first place in The National Poster Design Competition.</p>
+            </div>
+            <div class="achievement-item">
+                <h3>Top 6 Finalist Biotech Comic Strip Competition</h3>
+                <p>Participated in Biotech Comic Strip Competition "Hello My Macronutrients", organized by Atma Jaya Yogyakarta University.</p>
+            </div>
+            <div class="achievement-item">
+                <h3>Selected Writer of Poetry</h3>
+                <p>In the 2024 National Poetry Creation Competition on the theme of life, organized by PT Rifai Sinar Media.</p>
+            </div>
+            <div class="achievement-item">
+                <h3>One of the authors of the Book 'Bumantara Kehidupan'</h3>
+                <p>Earned multiple certificates for outstanding academic performance and success in various competitions.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <h2>portfolio</h2>
+        <div class="portfolio-container">
+            <div class="portfolio-box">
+                <a href="design-projects.html">
+                    <h3>Design Project</h3>
+                    <p>Creative designs to showcase innovative ideas.</p>
+                </a>
+            </div>
+            <div class="portfolio-box">
+                <a href="it-project.html">
+                    <h3>IT Project</h3>
+                    <p>Technical solutions and system development projects.</p>
+                </a>
+            </div>
+            <div class="portfolio-box">
+                <h3>Project Every Semester</h3>
+                <p>Academic projects highlighting consistent growth.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="organizational-experience">
+        <h2>Organizational Experiences</h2>
+        <div class="experience-grid">
+            <!-- Card 1 -->
+            <div class="experience-card">
+                <img src="me.jpg" alt="Profile Picture" class="profile-img" />
+                <h3>Treasurer of Organization <br><span>| Campoer Seni</span></h3>
+                <button class="learn-more-btn" data-detail="details-1">Learn More</button>
+                <div class="details" id="details-1" style="display: none;">
+                    <ul>
+                        <li>Enhanced financial reporting processes, providing stakeholders with accurate and timely information for decision-making purposes.</li>
+                        <li>Implemented strategies to improve organizational financial performance.</li>
+                        <li>Reduced operating costs by identifying and implementing cost-saving measures across the organization.</li>
+                        <li>Increased revenue from an initial surplus of 1 million rupiah to 25 million rupiah through effective financial strategies and initiatives.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="experience-card">
+                <img src="me.jpg" alt="Profile Picture" class="profile-img" />
+                <h3>Vice Chair of Event <br><span>| Mini Dance Show 2024</span></h3>
+                <button class="learn-more-btn" data-detail="details-2">Learn More</button>
+                <div class="details" id="details-2" style="display: none;">
+                    <ul>
+                        <li>Supported the Chair in overseeing and executing all aspects of event management.</li>
+                        <li>Conceptualized and designed event themes and choreography, and instructed talents in their performance.</li>
+                        <li>Oversaw logistical arrangements and proactively resolved issues to ensure the event's success.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="experience-card">
+                <img src="me.jpg" alt="Profile Picture" class="profile-img" />
+                <h3>Ticketing Coordinator <br><span>| Mini Dance Show 2024</span></h3>
+                <button class="learn-more-btn" data-detail="details-3">Learn More</button>
+                <div class="details" id="details-3" style="display: none;">
+                    <ul>
+                        <li>Designed and implemented a website to facilitate online ticket purchases for the audience.</li>
+                        <li>Entered data, generated analytical reports, and produced tracking reports.</li>
+                        <li>Improved team productivity with regular communication and progress updates, fostering a collaborative work environment.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Tambahkan kartu lainnya sesuai kebutuhan -->
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <p id="modal-text">Default Text</p>
+        </div>
+    </div>
+    
+
+
+    <section id="contact" class="contact-section">
+        <h2>{ contact_me }</h2>
+        <p>Feel free to reach out to collaborate or ask questions!</p>
+        <form class="contact-form">
+            <label for="name">Your Name*</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="email">Your Email*</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="message">Your Message*</label>
+            <textarea id="message" name="message" rows="5" placeholder="Write your message here" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+
+    <script>
+        // Fungsi untuk menangani tombol "Learn More"
+        // Fungsi untuk menampilkan modal dengan teks dinamis
+        document.querySelectorAll('.learn-more-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const detailId = button.getAttribute('data-detail'); // Ambil ID detail
+                const detailContent = document.querySelector(`#${detailId}`).innerHTML; // Ambil konten detail
+                
+                // Set teks di dalam modal
+                document.getElementById('modal-text').innerHTML = detailContent;
+
+                // Tampilkan modal
+                const modal = document.getElementById('modal');
+                modal.style.display = 'flex';
+            });
+        });
+
+        // Fungsi untuk menutup modal
+        document.querySelector('.close-btn').addEventListener('click', () => {
+            document.getElementById('modal').style.display = 'none';
+        });
+
+        // Menutup modal ketika klik di luar konten modal
+        window.addEventListener('click', (event) => {
+            const modal = document.getElementById('modal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Fungsi untuk menutup modal
+        document.querySelector('.close-btn').addEventListener('click', () => {
+            document.getElementById('modal').style.display = 'none';
+        });
+
+        // Menutup modal ketika klik di luar konten modal
+        window.addEventListener('click', (event) => {
+            const modal = document.getElementById('modal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+    </script>
+    <script>
+        function toggleDetails(id) {
+            const detailSection = document.getElementById(id);
+            const isVisible = detailSection.style.display === "block";
+            detailSection.style.display = isVisible ? "none" : "block";
+        }
+    </script>
+
+    <footer>
+        &copy; 2025 Jeanette Walangitan. All rights reserved.
+    </footer>
+</body>
+</html>

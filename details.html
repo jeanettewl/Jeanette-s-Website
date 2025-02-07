@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Proyek</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("project-title").textContent = localStorage.getItem('title');
+            document.getElementById("project-description").textContent = localStorage.getItem('description');
+            document.getElementById("project-technologies").textContent = "Teknologi: " + localStorage.getItem('technologies');
+            document.getElementById("project-skills").textContent = "Keahlian: " + localStorage.getItem('skills');
+        });
+    </script>
+</head>
+<body class="bg-black text-white">
+
+    <!-- Header Section -->
+    <div class="max-w-5xl mx-auto py-10 px-6">
+        <div class="flex items-center space-x-4 text-gray-300">
+            <span class="bg-gray-700 px-3 py-1 rounded-full text-sm">Mystery</span>
+            <span class="text-sm">13 Februari 2024</span>
+        </div>
+        <h1 id="project-title" class="text-5xl font-bold mt-4"></h1>
+    </div>
+
+    <!-- Featured Image -->
+    <div class="max-w-5xl mx-auto">
+        <img src="image.png" alt="Project Image" class="w-full rounded-lg shadow-lg">
+    </div>
+
+    <!-- Project Details Section -->
+    <section class="max-w-5xl mx-auto py-10 px-6">
+        <p id="project-description" class="text-gray-300 text-lg leading-relaxed"></p>
+        <p id="project-technologies" class="text-gray-400 mt-4"></p>
+        <p id="project-skills" class="text-gray-400 mt-2"></p>
+
+        <a href="it-project.html" class="mt-8 inline-block bg-green-500 text-white px-6 py-3 rounded-lg text-lg font-bold hover:bg-green-600 transition">
+            Kembali ke Beranda
+        </a>
+    </section>
+
+</body>
+</html>

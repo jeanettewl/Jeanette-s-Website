@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeanette's IT Projects</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212; /* Dark background */
+            color: #f5f5f5;
+        }
+
+        .portfolio-gallery {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .portfolio-header h2 {
+            color: #fff;
+            font-size: 2.5rem;
+        }
+
+        .portfolio-header p {
+            color: #ccc;
+            font-size: 1.2rem;
+        }
+
+        /* Semester Filter */
+        .semester-filter {
+            margin: 30px 0;
+        }
+
+        .semester-filter button {
+            margin: 10px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            background-color: #333; /* Dark gray buttons */
+            color: #f5f5f5; /* Light text */
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .semester-filter button:hover {
+            background-color: #7e0a22; /* Highlighted color */
+            transform: scale(1.1); /* Slight zoom effect */
+        }
+
+        .semester-filter button.active {
+            background-color: #a81230; /* Active button color */
+        }
+
+        /* Project Gallery */
+        .project-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .project-item {
+            width: 300px;
+            padding: 15px;
+            border: 1px solid #444;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            text-align: left;
+            background-color: #1e1e1e; /* Slightly lighter dark */
+        }
+
+        .project-item img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Portfolio Section -->
+    <section class="portfolio-gallery" id="portfolio-gallery">
+        <div class="portfolio-header">
+            <h2>Explore My Academic Projects</h2>
+            <p>Browse through my IT projects every semester.</p>
+        </div>
+
+        <!-- Filter Semester -->
+        <div class="semester-filter">
+            <button data-semester="all" class="active" onclick="filterProjects('all')">All</button>
+            <button data-semester="semester-1" onclick="filterProjects('semester-1')">Semester 1</button>
+            <button data-semester="semester-2" onclick="filterProjects('semester-2')">Semester 2</button>
+            <button data-semester="semester-3" onclick="filterProjects('semester-3')">Semester 3</button>
+            <button data-semester="semester-4" onclick="filterProjects('semester-4')">Semester 4</button>
+            <button data-semester="semester-5" onclick="filterProjects('semester-5')">Semester 5</button>
+        </div>
+
+        <!-- Project Gallery -->
+        <div class="project-gallery">
+            <div class="project-item semester-1">
+                <img src="DESIGN/semester1.png" alt="Semester 1 Project">
+                <h3>Project Semester 1</h3>
+                <p>Basic programming project description here.</p>
+            </div>
+            <div class="project-item semester-2">
+                <img src="DESIGN/semester2.png" alt="Semester 2 Project">
+                <h3>Project Semester 2</h3>
+                <p>Intermediate programming project description here.</p>
+            </div>
+            <div class="project-item semester-3">
+                <img src="DESIGN/semester3.png" alt="Semester 3 Project">
+                <h3>Project Semester 3</h3>
+                <p>Advanced programming project description here.</p>
+            </div>
+            <div class="project-item semester-4">
+                <img src="DESIGN/semester4.png" alt="Semester 4 Project">
+                <h3>Project Semester 4</h3>
+                <p>Web development project description here.</p>
+            </div>
+            <div class="project-item semester-5">
+                <img src="DESIGN/semester5.png" alt="Semester 5 Project">
+                <h3>Deteksi Koin dengan Deteksi Tepi</h3>
+                <p>Proyek pengolahan citra menggunakan OpenCV.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Function to filter projects based on semester
+        function filterProjects(semester) {
+            // Get all project items
+            const projects = document.querySelectorAll('.project-item');
+
+            // Get all filter buttons and remove active class
+            const buttons = document.querySelectorAll('.semester-filter button');
+            buttons.forEach(button => button.classList.remove('active'));
+
+            // Add active class to the clicked button
+            document.querySelector(`[data-semester="${semester}"]`).classList.add('active');
+
+            // Show or hide projects based on the selected semester
+            projects.forEach(project => {
+                if (semester === 'all' || project.classList.contains(semester)) {
+                    project.classList.remove('hidden'); // Show
+                } else {
+                    project.classList.add('hidden'); // Hide
+                }
+            });
+        }
+    </script>
+</body>
+</html>

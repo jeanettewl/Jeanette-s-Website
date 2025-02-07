@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Proyek</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("project-title").textContent = localStorage.getItem('title');
+            document.getElementById("project-description").textContent = localStorage.getItem('description');
+            document.getElementById("project-technologies").textContent = "Teknologi: " + localStorage.getItem('technologies');
+            document.getElementById("project-skills").textContent = "Keahlian: " + localStorage.getItem('skills');
+        });
+    </script>
+</head>
+<body class="bg-black text-white">
+
+    <!-- Header Section -->
+    <div class="max-w-5xl mx-auto py-10 px-6">
+        <div class="flex items-center space-x-4 text-gray-300">
+            <span class="bg-gray-700 px-3 py-1 rounded-full text-sm">Pengenalan Sentimen pada Teks</span>
+            <span class="text-sm">13 Februari 2024</span>
+        </div>
+        <h1 id="project-title" class="text-5xl font-bold mt-4">Natural Language Processing</h1>
+    </div>
+
+    <!-- Featured Image -->
+    <div class="max-w-5xl mx-auto">
+        <img src="image.png" alt="Project Image" class="w-full rounded-lg shadow-lg">
+    </div>
+
+    <!-- Project Details Section -->
+    <section class="max-w-5xl mx-auto py-10 px-6">
+        <p id="project-description" class="text-gray-300 text-lg leading-relaxed">
+            Mengembangkan sistem pendeteksi wajah menggunakan OpenCV yang dapat mendeteksi wajah dalam gambar atau video secara real-time dengan algoritma Haar Cascade dan Deep Learning (CNN).
+        </p>
+        <p id="project-technologies" class="text-gray-400 mt-4">
+            Teknologi: Python 🐍, OpenCV 👁, Haar Cascade / DNN Face Detection
+        </p>
+        <p id="project-skills" class="text-gray-400 mt-2">
+            Keahlian: ✅ Computer Vision & Image Processing, ✅ Algoritma Haar Cascade & CNN, ✅ Debugging & Performance Optimization
+        </p>
+
+        <!-- Additional Project Description -->
+        <p class="text-gray-300 mt-6">
+            Proyek ini bertujuan untuk mengembangkan sistem pendeteksi wajah secara otomatis yang dapat bekerja baik pada gambar statis maupun video real-time. Menggunakan algoritma Haar Cascade untuk mendeteksi fitur wajah secara cepat dan efektif dalam berbagai kondisi pencahayaan. Sebagai tambahan, teknologi Deep Learning dengan menggunakan model CNN diterapkan untuk meningkatkan akurasi deteksi wajah dalam kondisi yang lebih kompleks. Sistem ini diharapkan dapat digunakan dalam aplikasi seperti keamanan, pemantauan, serta interaksi berbasis wajah di berbagai bidang teknologi.
+        </p>
+
+        <a href="https://linktorepository.com" class="mt-4 inline-block bg-blue-500 text-white px-6 py-3 rounded-lg text-lg font-bold hover:bg-blue-600 transition">
+            Lihat Repositori
+        </a>
+
+        <a href="../it-project.html" class="mt-8 inline-block bg-green-500 text-white px-6 py-3 rounded-lg text-lg font-bold hover:bg-green-600 transition">
+            Kembali ke Beranda
+        </a>
+    </section>
+
+</body>
+</html>

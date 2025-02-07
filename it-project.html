@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Project</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function showSemester(semester) {
+            document.querySelectorAll('.project-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            document.getElementById(`semester-${semester}`).classList.remove('hidden');
+        }
+
+        function showDetails1(title, description, technologies, skills) {
+            localStorage.setItem('title', title);
+            localStorage.setItem('description', description);
+            localStorage.setItem('technologies', technologies);
+            localStorage.setItem('skills', skills);
+            window.location.href = 'details.html';
+        }
+        function showDetails2(title, description, technologies, skills) {
+            localStorage.setItem('title', title);
+            localStorage.setItem('description', description);
+            localStorage.setItem('technologies', technologies);
+            localStorage.setItem('skills', skills);
+            window.location.href = 'details/facerec.html';
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+
+    <!-- Hero Section -->
+    <div class="relative w-full h-screen flex flex-col justify-center items-center text-center bg-gray-900">
+        <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+        <div class="relative z-10 max-w-3xl">
+            <h1 class="text-5xl font-extrabold mb-4 text-green-400">IT Project Showcase</h1>
+            <p class="text-lg text-gray-300 mb-6">
+                Jelajahi berbagai proyek yang telah dibuat selama perjalanan akademik di bidang Informatika.
+                Dari pengolahan citra hingga pengembangan perangkat lunak, semua ada di sini!
+            </p>
+            <div class="flex flex-col gap-3 mt-6">
+                <a href="#projects" class="bg-green-500 text-white px-6 py-3 rounded-lg text-lg font-bold shadow-md hover:bg-green-600 transition text-center">
+                    Telusuri
+                </a>
+                <a href="index.html" class="bg-gray-700 text-white px-6 py-3 rounded-lg text-lg font-bold shadow-md hover:bg-gray-800 transition text-center">
+                    Back To Home
+                </a>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Projects Section -->
+    <section id="projects" class="project bg-gray-900 py-16 px-6 text-center">
+        <h2 class="text-4xl font-bold text-green-400">Pilih Kategori</h2>
+        <div class="flex justify-center gap-4 mt-4">
+            <button class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition" onclick="showSemester(0)">All</button>
+            <button class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition" onclick="showSemester(1)">Machine Learning & AI</button>
+            <button class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition" onclick="showSemester(2)">Web Development</button>
+            <button class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition" onclick="showSemester(3)">Data Science</button>
+        </div>
+
+        <div id="semester-1" class="project-section grid grid-cols-2 gap-4 max-w-5xl mx-auto mt-8">
+            <!-- Deteksi Koin -->
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                <img src="DESIGN/koin.png" alt="Project Image" class="w-full h-48 object-cover rounded-lg">
+                <div class="p-4">
+                    <span class="bg-green-600 text-white text-sm px-3 py-1 rounded-full">Machine Learning</span>
+                    <h2 class="text-2xl font-bold mt-2">Deteksi Koin dengan Deteksi Tepi</h2>
+                    <p class="text-gray-300 mt-2">Menggunakan algoritma deteksi tepi Canny untuk mengidentifikasi dan menghitung jumlah koin dalam gambar.</p>
+                    <button class="mt-4 bg-green-500 text-white font-bold py-2 px-6 rounded-lg hover:bg-green-600 transition"
+                    onclick="window.location.href='/details/deteksikoin.html'">
+                    Telusuri
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                <img src="DESIGN/Jessica (1).png" alt="Project Image" class="w-full h-48 object-cover rounded-lg">
+                <div class="p-4">
+                    <span class="bg-green-600 text-white text-sm px-3 py-1 rounded-full">Face Detection</span>
+                    <h2 class="text-2xl font-bold mt-2">Deteksi Wajah dengan OpenCV</h2>
+                    <p class="text-gray-300 mt-2">Menggunakan teknologi OpenCV untuk mendeteksi wajah pada gambar dan video secara real-time.</p>
+                    <button class="mt-4 bg-green-500 text-white font-bold py-2 px-6 rounded-lg hover:bg-green-600 transition"
+                    onclick="window.location.href='/details/facerec.html'">
+                    Telusuri
+                    </button>
+                </div>
+            </div>
+
+            <!-- Pengenalan Sentimen (Tampil di Machine Learning & AI) -->
+            <!-- <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                <img src="https://via.placeholder.com/600x300" alt="Project Image" class="w-full h-48 object-cover rounded-lg">
+                <div class="p-4">
+                    <span class="bg-green-600 text-white text-sm px-3 py-1 rounded-full">Natural Language Processing</span>
+                    <h2 class="text-2xl font-bold mt-2">Pengenalan Sentimen pada Teks</h2>
+                    <p class="text-gray-300 mt-2">Menggunakan algoritma pembelajaran mesin untuk menganalisis dan mengklasifikasikan sentimen dalam teks.</p>
+                    <button class="mt-4 bg-green-500 text-white font-bold py-2 px-6 rounded-lg hover:bg-green-600 transition"
+                    onclick="window.location.href='details/sentimenteks.html'">
+                    Telusuri
+                    </button>
+                </div>
+            </div> -->
+        </div>
+        
+        <div id="semester-3" class="project-section grid grid-cols-2 gap-4 max-w-5xl mx-auto mt-8">
+            <!-- Pengenalan Sentimen (Tampil di Data Science) -->
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                <img src="https://via.placeholder.com/600x300" alt="Project Image" class="w-full h-48 object-cover rounded-lg">
+                <div class="p-4">
+                    <span class="bg-green-600 text-white text-sm px-3 py-1 rounded-full">Natural Language Processing</span>
+                    <h2 class="text-2xl font-bold mt-2">Pengenalan Sentimen pada Teks</h2>
+                    <p class="text-gray-300 mt-2">Menggunakan algoritma pembelajaran mesin untuk menganalisis dan mengklasifikasikan sentimen dalam teks.</p>
+                    <button class="mt-4 bg-green-500 text-white font-bold py-2 px-6 rounded-lg hover:bg-green-600 transition"
+                    onclick="window.location.href='details/sentimenteks.html'">
+                    Telusuri
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        
+    </section>
+
+    <script>
+        function showSemester(semester) {
+            // Sembunyikan semua kategori proyek
+            document.getElementById("semester-1").classList.add("hidden");
+            document.getElementById("semester-3").classList.add("hidden");
+        
+            if (semester === 0) {
+                // Jika tombol "All" diklik, tampilkan semua proyek
+                document.getElementById("semester-1").classList.remove("hidden");
+                document.getElementById("semester-3").classList.remove("hidden");
+            } else {
+                // Tampilkan hanya kategori yang sesuai
+                document.getElementById(`semester-${semester}`).classList.remove("hidden");
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,461 @@
+#15 januari 2025
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeanette's Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Fira Code', monospace;
+            background-color: #1e1e2f;
+            color: #c5c6c7;
+            overflow-x: hidden;
+        }
+
+        nav {
+            display: flex;
+            position: sticky; /* Navbar tetap di layar saat scroll */
+            top: 0; /* Menempel di atas layar */
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #282a36;
+        }
+
+        nav .logo {
+            font-weight: 600;
+            font-size: 1.5rem;
+            color: #50fa7b;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #f8f8f2;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #50fa7b;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 80vh;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: #50fa7b;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #c5c6c7;
+            margin-top: 1rem;
+        }
+
+        .hero .btn {
+            margin-top: 2rem;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            color: #282a36;
+            background-color: #50fa7b;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .hero .btn:hover {
+            background-color: #3dc86f;
+            transform: scale(1.1);
+        }
+
+        section {
+            padding: 3rem 2rem;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            color: #50fa7b;
+            margin-bottom: 1.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background-color: #282a36;
+            color: #f8f8f2;
+            font-size: 0.9rem;
+        }
+        /* About Me Section */
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .about-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid #50fa7b;
+            object-fit: cover;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text p {
+            font-size: 1.2rem;
+            color: #c5c6c7;
+            line-height: 1.6;
+        }
+
+
+        /* Styling untuk Section Intro */
+        .intro {
+            text-align: center;
+            padding: 2rem 1rem;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .intro h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #0066cc;
+        }
+        .intro p {
+            font-size: 1.2rem;
+            margin: 0 auto;
+            max-width: 600px;
+            line-height: 1.8;
+        }
+
+        /* Styling untuk Features */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            background-color: #ffffff;
+        }
+
+        .feature {
+            padding: 1.5rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #444;
+        }
+
+        .feature p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Tambahkan efek hover */
+        .feature:hover h2 {
+            color: #0066cc;
+        }
+
+        /* Untuk responsif */
+        @media (max-width: 768px) {
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        /* Portfolio Section */
+        .portfolio-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .portfolio-box {
+            background-color: #282a36;
+            color: #c5c6c7;
+            border: 2px solid #6272a4;
+            border-radius: 5px;
+            padding: 2rem;
+            text-align: center;
+            width: 250px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .portfolio-box:hover {
+            background-color: #50fa7b;
+            color: #282a36;
+            transform: scale(1.05);
+        }
+
+        .portfolio-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-box p {
+            font-size: 1rem;
+        }
+
+        .portfolio-box a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .portfolio-box a:hover {
+            text-decoration: underline;
+        }
+
+        /* Achievements Section */
+        .achievements-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .achievement-item {
+            background-color: #282a36;
+            border: 2px solid #6272a4;
+            border-radius: 5px;
+            padding: 1.5rem;
+            color: #c5c6c7;
+        }
+
+        .achievement-item h3 {
+            font-size: 1.3rem;
+            color: #50fa7b;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        .contact-section h2 {
+            font-size: 2rem;
+            color: #50fa7b;
+            margin-bottom: 1rem;
+        }
+
+        .contact-section p {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            color: #c5c6c7;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #282a36;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form label {
+            display: block;
+            font-size: 1rem;
+            color: #50fa7b;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 2px solid #6272a4;
+            border-radius: 5px;
+            background-color: #1e1e2f;
+            color: #c5c6c7;
+            font-size: 1rem;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #50fa7b;
+            outline: none;
+        }
+
+        .contact-form button {
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            color: #282a36;
+            background-color: #50fa7b;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #3dc86f;
+            transform: scale(1.1);
+        }
+            /* Responsive Design */
+        @media (max-width: 768px) {
+            .about-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-photo {
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Jeanette Walangitan</div>
+        <ul>
+            <li><a href="#home">home</a></li>
+            <li><a href="#about">about</a></li>
+            <li><a href="#portfolio">portfolio</a></li>
+            <li><a href="#achievements">achievements</a></li>
+            <li><a href="#contact">contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <h1>{ "Hello World!" }</h1>
+        <p>// Hi, I'm Jeanette, a creative programmer and designer</p>
+        <button class="btn">Meet Me</button>
+    </section>
+
+    <section id="about">
+        <h2>about</h2>
+        <div class="about-container">
+            <img src="me.jpg" alt="Jeanette Walangitan" class="about-photo">
+            <div class="about-text">
+                <p>Hi there! I'm Jeanette, an Informatics student passionate about design and copywriting. With a knack for turning ideas into impactful visuals and compelling narratives, I thrive on creating unique projects. As a Fiverr freelancer, I help clients bring their visions to life. Let’s build something amazing together!</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="intro">
+        <h1>Welcome to My World</h1>
+        <p>Discover my journey as a 5th-semester Informatics student passionate about digital innovation.</p>
+    </section>
+    
+    <section class="features">
+        <div class="feature">
+            <h2>Informatics Enthusiast</h2>
+            <p>Explore my interests in digital innovation, programming, and problem-solving as a passionate Informatics student.</p>
+        </div>
+        <div class="feature">
+            <h2>Creative Explorer</h2>
+            <p>Explore my digital designs, illustrations, and content creation projects that showcase my artistic flair.</p>
+        </div>
+        <div class="feature">
+            <h2>Adaptability & Growth</h2>
+            <p>Discover my journey of learning and growing through diverse roles in student organizations, where I’ve developed valuable skills and embraced new challenges.</p>
+        </div>
+    </section>
+    
+
+    <section id="portfolio">
+        <h2>portfolio</h2>
+        <div class="portfolio-container">
+            <div class="portfolio-box">
+                <a href="design-projects.html">
+                    <h3>Design Project</h3>
+                    <p>Creative designs to showcase innovative ideas.</p>
+                </a>
+            </div>
+            <div class="portfolio-box">
+                <h3>IT Project</h3>
+                <p>Technical solutions and system development projects.</p>
+            </div>
+            <div class="portfolio-box">
+                <h3>Project Every Semester</h3>
+                <p>Academic projects highlighting consistent growth.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements">
+        <h2>achievements</h2>
+        <div class="achievements-container">
+            <div class="achievement-item">
+                <h3>First Place in The Poster Design Competition</h3>
+                <p>Got first place in The National Poster Design Competition.</p>
+            </div>
+            <div class="achievement-item">
+                <h3>Top 6 Finalist Biotech Comic Strip Competition</h3>
+                <p>Participated in Biotech Comic Strip Competition "Hello My Macronutrients", organized by Atma Jaya Yogyakarta University.</p>
+            </div>
+            <div class="achievement-item">
+                <h3>Selected Writer of Poetry</h3>
+                <p>In the 2024 National Poetry Creation Competition on the theme of life, organized by PT Rifai Sinar Media.</p>
+            </div>
+            <div class="achievement-item">
+                <h3>One of the authors of the Book 'Bumantara Kehidupan'</h3>
+                <p>Earned multiple certificates for outstanding academic performance and success in various competitions.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>{ contact_me }</h2>
+        <p>Feel free to reach out to collaborate or ask questions!</p>
+        <form class="contact-form">
+            <label for="name">Your Name*</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="email">Your Email*</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="message">Your Message*</label>
+            <textarea id="message" name="message" rows="5" placeholder="Write your message here" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        &copy; 2025 Jeanette Walangitan. All rights reserved.
+    </footer>
+</body>
+</html>

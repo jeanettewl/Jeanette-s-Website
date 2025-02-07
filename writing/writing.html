@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeanette's Writing Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #f5f5f5;
+        }
+        .portfolio-gallery {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .portfolio-header h2 {
+            color: #fff;
+            font-size: 2.5rem;
+        }
+        .portfolio-header p {
+            color: #ccc;
+            font-size: 1.2rem;
+        }
+        .genre-filter {
+            margin: 30px 0;
+        }
+        .genre-filter button {
+            margin: 10px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            background-color: #333;
+            color: #f5f5f5;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .genre-filter button:hover {
+            background-color: #7e0a22;
+            transform: scale(1.1);
+        }
+        .genre-filter button.active {
+            background-color: #a81230;
+        }
+        .writing-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .writing-item {
+            width: 300px;
+            padding: 15px;
+            border: 1px solid #444;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            background-color: #1e1e1e;
+            text-align: left;
+        }
+        .writing-item img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .writing-item a {
+            display: block;
+            margin-top: 10px;
+            padding: 8px 15px;
+            border: none;
+            text-align: center;
+            background-color: #7e0a22;
+            color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+        }
+        .writing-item a:hover {
+            background-color: #a81230;
+        }
+    </style>
+</head>
+<body>
+    <section class="portfolio-gallery" id="portfolio-gallery">
+        <div class="portfolio-header">
+            <h2>Explore My Writing Portfolio</h2>
+            <p>Browse through my collection of stories, essays, and articles.</p>
+        </div>
+        <div class="genre-filter">
+            <button data-genre="all" class="active" onclick="filterWritings('all')">All</button>
+            <button data-genre="fiction" onclick="filterWritings('fiction')">Fiction</button>
+            <button data-genre="poetry" onclick="filterWritings('poetry')">Poetry</button>
+            <button data-genre="essay" onclick="filterWritings('essay')">Essay</button>
+            <button data-genre="article" onclick="filterWritings('article')">Article</button>
+        </div>
+        <div class="writing-gallery">
+            <div class="writing-item fiction">
+                <img src="WRITING/fiction1.jpg" alt="Fiction Piece">
+                <h3>The Lost Universe</h3>
+                <p>A sci-fi short story about a hidden world beyond the stars.</p>
+                <a href="writing-details.html?title=The Lost Universe&description=A deep space adventure exploring the mystery of a parallel universe.&category=Fiction, Sci-Fi&date=2025-02-06">Read More</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
