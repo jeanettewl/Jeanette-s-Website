@@ -45,28 +45,28 @@ detailButtons.forEach(button => {
 });
 
 // Select the carousel and arrows
-const carousel = document.querySelector('.carousel');
-const leftArrow = document.querySelector('.left-arrow');
-const rightArrow = document.querySelector('.right-arrow');
+document.querySelectorAll('.carousel-container').forEach(container => {
+    const carousel = container.querySelector('.carousel');
+    const leftArrow = container.querySelector('.left-arrow');
+    const rightArrow = container.querySelector('.right-arrow');
 
-// Set the scroll amount (adjust as needed)
-const scrollAmount = 300;
+    const scrollStep = carousel.querySelector('.carousel-item').offsetWidth; // Ambil lebar item
 
-// Event listener for left arrow
-leftArrow.addEventListener('click', () => {
-    carousel.scrollBy({
-        left: -scrollAmount,  // Move left
-        behavior: 'smooth'    // Smooth scroll
+    leftArrow.addEventListener('click', () => {
+        carousel.scrollBy({
+            left: -scrollStep,
+            behavior: 'smooth'
+        });
+    });
+
+    rightArrow.addEventListener('click', () => {
+        carousel.scrollBy({
+            left: scrollStep,
+            behavior: 'smooth'
+        });
     });
 });
 
-// Event listener for right arrow
-rightArrow.addEventListener('click', () => {
-    carousel.scrollBy({
-        left: scrollAmount,   // Move right
-        behavior: 'smooth'    // Smooth scroll
-    });
-});
 
 
 // Fungsi untuk menutup modal

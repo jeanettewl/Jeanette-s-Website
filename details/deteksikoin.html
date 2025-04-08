@@ -7,11 +7,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            document.getElementById("project-title").textContent = localStorage.getItem('title');
-            document.getElementById("project-description").textContent = localStorage.getItem('description');
-            document.getElementById("project-technologies").textContent = "Teknologi: " + localStorage.getItem('technologies');
-            document.getElementById("project-skills").textContent = "Keahlian: " + localStorage.getItem('skills');
-        });
+            // document.getElementById("project-title").textContent = localStorage.getItem('title');
+        //     document.getElementById("project-description").textContent = localStorage.getItem('description');
+        //     document.getElementById("project-technologies").textContent = "Teknologi: " + localStorage.getItem('technologies');
+        //     document.getElementById("project-skills").textContent = "Keahlian: " + localStorage.getItem('skills');
+        // });
     </script>
 </head>
 <body class="bg-black text-white">
@@ -19,10 +19,10 @@
     <!-- Header Section -->
     <div class="max-w-5xl mx-auto py-10 px-6">
         <div class="flex items-center space-x-4 text-gray-300">
-            <span class="bg-gray-700 px-3 py-1 rounded-full text-sm">Deteksi Koin Project</span>
+            <span class="bg-green-700 px-3 py-1 rounded-full text-sm">Machine Learning</span>
             <span class="text-sm">13 Februari 2024</span>
         </div>
-        <h1 id="project-title" class="text-5xl font-bold mt-4">Machine Learning</h1>
+        <h1 id="project-title" class="text-5xl font-bold mt-4">Coin Detection with Edge Detection</h1>
     </div>
 
     <!-- Featured Image -->
@@ -33,26 +33,32 @@
     <!-- Project Details Section -->
     <section class="max-w-5xl mx-auto py-10 px-6">
         <p id="project-description" class="text-gray-300 text-lg leading-relaxed">
-            Mengembangkan sistem pendeteksi wajah menggunakan OpenCV yang dapat mendeteksi wajah dalam gambar atau video secara real-time dengan algoritma Haar Cascade dan Deep Learning (CNN).
+            Developing a coin detection system using OpenCV & Image Processing.</p>
         </p>
         <p id="project-technologies" class="text-gray-400 mt-4">
-            Teknologi: Python 🐍, OpenCV 👁, Haar Cascade / DNN Face Detection
+            🛠 Technologies: Python 🐍, OpenCV 👁, NumPy 🔢, Matplotlib 📊, Tkinter 🎨
         </p>
         <p id="project-skills" class="text-gray-400 mt-2">
-            Keahlian: ✅ Computer Vision & Image Processing, ✅ Algoritma Haar Cascade & CNN, ✅ Debugging & Performance Optimization
+            🎯 Skills: ✅ Computer Vision, ✅ Image Processing, ✅ Object Detection
         </p>
 
         <!-- Additional Project Description -->
         <p class="text-gray-300 mt-6">
-            Proyek ini bertujuan untuk mengembangkan sistem pendeteksi wajah secara otomatis yang dapat bekerja baik pada gambar statis maupun video real-time. Menggunakan algoritma Haar Cascade untuk mendeteksi fitur wajah secara cepat dan efektif dalam berbagai kondisi pencahayaan. Sebagai tambahan, teknologi Deep Learning dengan menggunakan model CNN diterapkan untuk meningkatkan akurasi deteksi wajah dalam kondisi yang lebih kompleks. Sistem ini diharapkan dapat digunakan dalam aplikasi seperti keamanan, pemantauan, serta interaksi berbasis wajah di berbagai bidang teknologi.
+            This project develops an automated coin detection system using OpenCV and image processing techniques. Users can select an image containing coins, and the system will analyze and detect them based on shape and size.
+        </p>
+        <p class="text-gray-300 mt-6">
+            The system performs grayscale conversion, Gaussian blurring, adaptive thresholding, and morphological transformations to enhance detection accuracy. It then identifies circular objects (coins) using contour detection and visualizes the results.
+        </p>
+        <p class="text-gray-300 mt-6">
+            Additionally, a guide feature displays correct and incorrect coin placement references to help users ensure proper positioning before detection. This project is useful for coin counting machines, currency validation systems, and educational purposes in image processing
         </p>
 
-        <a href="https://github.com/jeanettewl/deteksikoin.git" class="mt-4 inline-block bg-blue-500 text-white px-6 py-3 rounded-lg text-lg font-bold hover:bg-blue-600 transition">
-            Lihat Repositori
+        <a href="https://github.com/jeanettewl/deteksikoin.git" class="mt-100 inline-block bg-blue-500 text-white px-10 py-3 rounded-lg text-lg font-bold hover:bg-blue-600 transition">
+            Repository
         </a>
 
-        <a href="../it-project.html" class="mt-8 inline-block bg-green-500 text-white px-6 py-3 rounded-lg text-lg font-bold hover:bg-green-600 transition">
-            Kembali ke Beranda
+        <a href="../it-project.html" class="mt-8 inline-block bg-green-500 text-white px-10 py-3 rounded-lg text-lg font-bold hover:bg-green-600 transition">
+            Home
         </a>
     </section>
 

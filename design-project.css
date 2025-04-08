@@ -198,6 +198,19 @@ body {
     transform: translateY(-50%) scale(1.2); /* Efek zoom kecil */
 }
 
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+  }
+  
+  .carousel-item {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+  
+
 /* Tombol panah kiri */
 .left-arrow {
     left: 10px; /* Posisi kiri */

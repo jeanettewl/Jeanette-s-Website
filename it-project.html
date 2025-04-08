@@ -42,12 +42,11 @@
         <div class="relative z-10 max-w-3xl">
             <h1 class="text-5xl font-extrabold mb-4 text-green-400">IT Project Showcase</h1>
             <p class="text-lg text-gray-300 mb-6">
-                Jelajahi berbagai proyek yang telah dibuat selama perjalanan akademik di bidang Informatika.
-                Dari pengolahan citra hingga pengembangan perangkat lunak, semua ada di sini!
+                Explore various projects created throughout the academic journey in Informatics. From image processing to software development, it's all here!
             </p>
             <div class="flex flex-col gap-3 mt-6">
                 <a href="#projects" class="bg-green-500 text-white px-6 py-3 rounded-lg text-lg font-bold shadow-md hover:bg-green-600 transition text-center">
-                    Telusuri
+                    Explore Now
                 </a>
                 <a href="index.html" class="bg-gray-700 text-white px-6 py-3 rounded-lg text-lg font-bold shadow-md hover:bg-gray-800 transition text-center">
                     Back To Home
@@ -59,7 +58,7 @@
 
     <!-- Projects Section -->
     <section id="projects" class="project bg-gray-900 py-16 px-6 text-center">
-        <h2 class="text-4xl font-bold text-green-400">Pilih Kategori</h2>
+        <h2 class="text-4xl font-bold text-green-400">Choose a Category</h2>
         <div class="flex justify-center gap-4 mt-4">
             <button class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition" onclick="showSemester(0)">All</button>
             <button class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition" onclick="showSemester(1)">Machine Learning & AI</button>
@@ -67,83 +66,91 @@
             <button class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition" onclick="showSemester(3)">Data Science</button>
         </div>
 
-        <div id="semester-1" class="project-section grid grid-cols-2 gap-4 max-w-5xl mx-auto mt-8">
-            <!-- Deteksi Koin -->
-            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
-                <img src="DESIGN/koin.png" alt="Project Image" class="w-full h-48 object-cover rounded-lg">
-                <div class="p-4">
+        <div id="all-projects" class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mt-8">
+            <!-- Semester 1 -->
+            <div class="project-item semester-1 bg-gray-800 p-6 rounded-lg shadow-lg">
+                <img src="DESIGN/koin.png" alt="Project Image" class="w-full h-55 object-cover rounded-lg">
+                <div class="p-10">
                     <span class="bg-green-600 text-white text-sm px-3 py-1 rounded-full">Machine Learning</span>
-                    <h2 class="text-2xl font-bold mt-2">Deteksi Koin dengan Deteksi Tepi</h2>
-                    <p class="text-gray-300 mt-2">Menggunakan algoritma deteksi tepi Canny untuk mengidentifikasi dan menghitung jumlah koin dalam gambar.</p>
+                    <h2 class="text-2xl font-bold mt-2">Coin Detection with Edge Detection</h2>
+                    <p class="text-gray-300 mt-2">Utilizing the Canny edge detection algorithm to identify and count coins in an image.</p>
                     <button class="mt-4 bg-green-500 text-white font-bold py-2 px-6 rounded-lg hover:bg-green-600 transition"
                     onclick="window.location.href='/details/deteksikoin.html'">
-                    Telusuri
+                    Explore
                     </button>
                 </div>
             </div>
-            
-            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+            <div class="project-item semester-1 bg-gray-800 p-6 rounded-lg shadow-lg">
                 <img src="DESIGN/Jessica (1).png" alt="Project Image" class="w-full h-48 object-cover rounded-lg">
-                <div class="p-4">
+                <div class="p-10">
                     <span class="bg-green-600 text-white text-sm px-3 py-1 rounded-full">Face Detection</span>
-                    <h2 class="text-2xl font-bold mt-2">Deteksi Wajah dengan OpenCV</h2>
-                    <p class="text-gray-300 mt-2">Menggunakan teknologi OpenCV untuk mendeteksi wajah pada gambar dan video secara real-time.</p>
+                    <h2 class="text-2xl font-bold mt-2">Real-Time Face Detection with OpenCV</h2>
+                    <p class="text-gray-300 mt-2">Leveraging OpenCV technology to detect faces in images and videos in real-time.</p>
                     <button class="mt-4 bg-green-500 text-white font-bold py-2 px-6 rounded-lg hover:bg-green-600 transition"
                     onclick="window.location.href='/details/facerec.html'">
-                    Telusuri
+                    Explore
                     </button>
                 </div>
             </div>
-
-            <!-- Pengenalan Sentimen (Tampil di Machine Learning & AI) -->
-            <!-- <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
-                <img src="https://via.placeholder.com/600x300" alt="Project Image" class="w-full h-48 object-cover rounded-lg">
-                <div class="p-4">
-                    <span class="bg-green-600 text-white text-sm px-3 py-1 rounded-full">Natural Language Processing</span>
-                    <h2 class="text-2xl font-bold mt-2">Pengenalan Sentimen pada Teks</h2>
-                    <p class="text-gray-300 mt-2">Menggunakan algoritma pembelajaran mesin untuk menganalisis dan mengklasifikasikan sentimen dalam teks.</p>
+        
+            <!-- Semester 2 -->
+            <div class="project-item semester-2 bg-gray-800 p-6 rounded-lg shadow-lg">
+                <img src="DESIGN/mds.png" alt="Project Image" class="w-full h-55 object-cover rounded-lg">
+                <div class="p-10">
+                    <span class="bg-green-600 text-white text-sm px-3 py-1 rounded-full">Web Development</span>
+                    <h2 class="text-2xl font-bold mt-2">MDS Ticketing Purchase</h2>
+                    <p class="text-gray-300 mt-2">Using PHP, HTML, CSS, JavaScript, etc</p>
                     <button class="mt-4 bg-green-500 text-white font-bold py-2 px-6 rounded-lg hover:bg-green-600 transition"
-                    onclick="window.location.href='details/sentimenteks.html'">
-                    Telusuri
+                    onclick="window.location.href='/details/mds.html'">
+                    Explore
                     </button>
                 </div>
-            </div> -->
+            </div>
+        
+            <!-- Semester 3 -->
+            <div class="project-item semester-3 bg-gray-800 p-6 rounded-lg shadow-lg">
+                <img src="DESIGN/wordcloud.png" alt="Project Image" class="w-full h-55 object-cover rounded-lg">
+                <div class="p-10">
+                    <span class="bg-green-600 text-white text-sm px-3 py-1 rounded-full">Data Science + NLP</span>
+                    <h2 class="text-2xl font-bold mt-2">News Sentiment Classification</h2>
+                    <p class="text-gray-300 mt-2">Using NLP & Web Scraping to analyze and classify sentiment in text.</p>
+                    <button class="mt-4 bg-green-500 text-white font-bold py-2 px-6 rounded-lg hover:bg-green-600 transition"
+                    onclick="window.location.href='/details/news_sentiment.html'">
+                    Explore
+                    </button>
+                </div>
+            </div>
         </div>
         
-        <div id="semester-3" class="project-section grid grid-cols-2 gap-4 max-w-5xl mx-auto mt-8">
-            <!-- Pengenalan Sentimen (Tampil di Data Science) -->
-            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
-                <img src="https://via.placeholder.com/600x300" alt="Project Image" class="w-full h-48 object-cover rounded-lg">
-                <div class="p-4">
-                    <span class="bg-green-600 text-white text-sm px-3 py-1 rounded-full">Natural Language Processing</span>
-                    <h2 class="text-2xl font-bold mt-2">Pengenalan Sentimen pada Teks</h2>
-                    <p class="text-gray-300 mt-2">Menggunakan algoritma pembelajaran mesin untuk menganalisis dan mengklasifikasikan sentimen dalam teks.</p>
-                    <button class="mt-4 bg-green-500 text-white font-bold py-2 px-6 rounded-lg hover:bg-green-600 transition"
-                    onclick="window.location.href='details/sentimenteks.html'">
-                    Telusuri
-                    </button>
-                </div>
-            </div>
-        </div>
+    </section>
+
+
         
         
     </section>
 
     <script>
         function showSemester(semester) {
-            // Sembunyikan semua kategori proyek
-            document.getElementById("semester-1").classList.add("hidden");
-            document.getElementById("semester-3").classList.add("hidden");
-        
-            if (semester === 0) {
-                // Jika tombol "All" diklik, tampilkan semua proyek
-                document.getElementById("semester-1").classList.remove("hidden");
-                document.getElementById("semester-3").classList.remove("hidden");
-            } else {
-                // Tampilkan hanya kategori yang sesuai
-                document.getElementById(`semester-${semester}`).classList.remove("hidden");
-            }
+        let projects = document.querySelectorAll(".project-item");
+
+        if (semester === 0) {
+            // Tampilkan semua proyek
+            projects.forEach(project => project.style.display = "block");
+        } else {
+            // Sembunyikan semua proyek dulu
+            projects.forEach(project => project.style.display = "none");
+
+            // Tampilkan proyek dengan kelas semester yang sesuai
+            document.querySelectorAll(`.semester-${semester}`).forEach(project => {
+                project.style.display = "block";
+            });
         }
+    }
+
+
+
     </script>
+
+    
 </body>
 </html>

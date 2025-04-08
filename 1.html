@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeanette's Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">Jeanette Walangitan</div>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#home">home</a></li>
+            <li><a href="#about">about</a></li>
+            <li><a href="#achievements">achievements</a></li>
+            <li><a href="#certificates">certificates</a></li>
+            <li><a href="#portfolio">portfolio</a></li>
+            <li><a href="#organizational-experience">experiences</a></li>
+            <li><a href="#contact">contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <h1>{ "Hello World!" }</h1>
+        <p>// Hi, I'm Jeanette, a creative programmer and designer</p>
+        <button class="btn"  >Meet Me</button>
+    </section>
+
+    <section class="intro" id="intro">
+        <h1>Welcome to My World</h1>
+        <p>"The best way to predict the future is to create it." <br>– Peter Drucker –</p>
+        <div class="intro-btn-container">
+            <button class="btn intro-btn" id="learn-more-btn">Learn More</button>
+        </div>
+
+        <div class="details" id="hidden-details">
+            <div class="details-container">
+                <div class="detail-box">
+                    <h3>Informatics Enthusiast</h3>
+                    <p>Explore my interests in digital innovation, programming, and problem-solving as a passionate Informatics student.</p>
+                </div>
+                <div class="detail-box">
+                    <h3>Creative Explorer</h3>
+                    <p>Explore my digital designs, illustrations, and content creation projects that showcase my artistic flair.</p>
+                </div>
+                <div class="detail-box">
+                    <h3>Adaptability & Growth</h3>
+                    <p>Discover my journey of learning and growing through diverse roles in student organizations, where I’ve developed valuable skills and embraced new challenges.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-container">
+            <div class="about-photo-container">
+                <img src="me.jpg" alt="Jeanette Walangitan" class="about-photo">
+            </div>
+            <div class="about-text">
+                <p>
+                    Hi there! I'm Jeanette, an Informatics student with a deep passion for creativity and innovation. From crafting captivating designs to weaving compelling narratives, I enjoy bringing ideas to life in ways that inspire and connect with people.
+                    <br><br>As a digital creator and freelance professional on Fiverr, I specialize in creating visual stories and unique solutions tailored to my clients' needs. Beyond work, I thrive on exploring challenges, learning new skills, and embracing diverse experiences that shape my growth.
+                    <br><br>Whether it's through design, writing, or coding, my goal is to blend creativity and technology to make a meaningful impact. Let’s collaborate and create something extraordinary together!
+                </p>
+                <div class="social-links">
+                    <a href="https://bit.ly/Jeanette_CV_2025" target="_blank" class="social-icon">
+                        <img src="DESIGN/cv.png" alt="My CV" width="80"> 
+                    </a>
+                    <a href="https://www.instagram.com/jeanettewl_d/" target="_blank" class="social-icon">
+                        <img src="DESIGN/15.png" alt="Instagram" width="80"> 
+                    </a>
+                    <a href="https://www.linkedin.com/in/jeanette-walangitan-829736269/" target="_blank" class="social-icon">
+                        <img src="DESIGN/17.png" alt="LinkedIn" width="80"> 
+                    </a>
+                    <a href="https://www.fiverr.com/jean_janewl" target="_blank" class="social-icon">
+                        <img src="DESIGN/16.png" alt="Fiverr" width="80"> 
+                    </a>
+                    <a href="https://github.com/jeanettewl/" target="_blank" class="social-icon">
+                        <img src="DESIGN/github2.png" alt="Github" width="80"> 
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <section id="achievements">
+        <h2>achievements</h2>
+        <div class="achievements-container">
+            <div class="achievement-item">
+                <h3>First Place in The Poster Design Competition</h3>
+                <p>Got first place in The National Poster Design Competition.</p>
+            </div>
+            <div class="achievement-item">
+                <h3>Top 6 Finalist Biotech Comic Strip Competition</h3>
+                <p>Participated in Biotech Comic Strip Competition "Hello My Macronutrients", organized by Atma Jaya Yogyakarta University.</p>
+            </div>
+            <div class="achievement-item">
+                <h3>Selected Writer of Poetry</h3>
+                <p>In the 2024 National Poetry Creation Competition on the theme of life, organized by PT Rifai Sinar Media.</p>
+            </div>
+            <div class="achievement-item">
+                <h3>One of the authors of the Book 'Bumantara Kehidupan'</h3>
+                <p>Earned multiple certificates for outstanding academic performance and success in various competitions.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="certificates">
+        <h2>certificate</h2>
+        <div class="certificate-grid">
+            
+            <div class="certificate-card">
+                <h1 class="certificate-title">Course</h1>
+                <button class="button" onclick="openPopup('course')">Lihat Detail</button>
+            </div>
+            
+            <div class="certificate-card">
+                <h1 class="certificate-title">Experience</h1>
+                <button class="button" onclick="openPopup('experience')">Lihat Detail</button>
+            </div>
+    
+            <div class="certificate-card">
+                <h1 class="certificate-title">Competition</h1>
+                <button class="button" onclick="openPopup('competition')">Lihat Detail</button>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay" onclick="closePopup()"></div>
+
+    <!-- Popup -->
+    <div class="popup" id="popup">
+        <div class="popup-header">
+            <span id="popup-title"></span>
+            <button class="close-btn" onclick="closePopup()">×</button>
+        </div>
+        <div class="popup-content" id="popup-content">
+        </div>
+    </div>
+
+    <script>
+        const certificateData = {
+    course: [
+        { src: "sertifikat/aiintroduction.png", alt: "Artificial Intelligent: AI Introduction" },
+        { src: "sertifikat/designprinciples.png", alt: "Graphic Design Fundamental: Design Principles Course" },
+        { src: "sertifikat/desihnelement.png", alt: "Graphic Design Fundamental: Design Element Course" },
+        { src: "sertifikat/understandingdata.png", alt: "Basic Data: Understanding Data Course" },
+        { src: "sertifikat/understandingbusiness.png", alt: "Basic Data: Understanding Business Processs" },
+        { src: "sertifikat/copywriting.png", alt: "Creative Copywriting: Copywriting Introduction" },
+    ],
+    experience: [
+        { src: "sertifikat/ldk.png", alt: " Peserta dalam Acara Latihan Dasar Kepemimpinan " },
+        { src: "sertifikat/pembimbingkelompok.png", alt: " Pembimbing Kelompok dalam Acara LDK Campoer Seni 2024 " },
+        { src: "sertifikat/mds23.png", alt: " Panitia dalam Acara Mini Dance Show 2023 sebagai Koordinator Tim Ticketing & Anggota Tim Acara " },
+        { src: "sertifikat/mds24.png", alt: " Panitia dalam Acara Mini Dance Show 2024 sebagai Wakil Ketua Pelaksana & Koordinator Tim Ticketing " },
+    ],
+    competition: [
+        { src: "sertifikat/biotechh.png", alt: "Top 6 Finalis Biotech Comic Strip Competition" },
+        { src: "sertifikat/penulisciptaterpilih.png", alt: "Penulis Terpilih Lomba Cipta Puisi Nasional 2024 Tema 'Kehidupan'" },
+        { src: "sertifikat/temakehidupan.png", alt: "Penulis Terpilih Lomba Cipta Puisi Nasional 2024 Tema 'Kehidupan'" },
+        { src: "sertifikat/bumantarakehidupan.png", alt: "Salah Satu Penulis Buku 'Bumantara Kehidupan'" },
+    ]
+    };
+
+    function openPopup(category) {
+        const popup = document.getElementById("popup");
+        const overlay = document.getElementById("overlay");
+        const popupContent = document.getElementById("popup-content");
+        const popupTitle = document.getElementById("popup-title");
+
+        // Atur judul popup
+        popupTitle.textContent = category.charAt(0).toUpperCase() + category.slice(1);
+
+        // Kosongkan isi popup sebelum menambahkan gambar baru
+        popupContent.innerHTML = "";
+
+        // Tambahkan gambar + caption berdasarkan kategori
+        certificateData[category].forEach(cert => {
+            const certContainer = document.createElement("div");
+            certContainer.classList.add("cert-container");
+
+            const img = document.createElement("img");
+            img.src = cert.src;
+            img.alt = cert.alt;
+
+            const caption = document.createElement("div");
+            caption.classList.add("caption");
+            caption.textContent = cert.alt; // Menggunakan alt sebagai caption
+
+            certContainer.appendChild(img);
+            certContainer.appendChild(caption);
+            popupContent.appendChild(certContainer);
+        });
+
+        popup.style.display = "block";
+        overlay.style.display = "block";
+    }
+
+    function closePopup() {
+        document.getElementById("popup").style.display = "none";
+        document.getElementById("overlay").style.display = "none";
+    }
+
+    </script>
+
+    <div id="certificate-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modal-img" src="" alt="Certificate">
+            <h3 id="modal-title"></h3>
+            <p id="modal-info"></p>
+        </div>
+    </div>
+
+    <section id="portfolio">
+        <h2>portfolio</h2>
+        <div class="portfolio-container">
+            <div class="portfolio-box">
+                <a href="design-projects.html">
+                    <h3>Design Project</h3>
+                    <p>Creative designs to showcase innovative ideas.</p>
+                </a>
+            </div>
+            <div class="portfolio-box">
+                <a href="it-project.html">
+                    <h3>IT Project</h3>
+                    <p>Technical solutions and system development projects.</p>
+                </a>
+            </div>
+            <div class="portfolio-box">
+                <a href="https://medium.com/@jeanjane">
+                    <h3>Writing Project</h3>
+                    <p>Expressing myself through writing.</p>
+                </a>
+                
+            </div>
+        </div>
+    </section>
+
+
+    <section id="organizational-experience">
+        <h2>Organizational Experiences</h2>
+        <div class="experience-grid">
+            <!-- Card 1 -->
+            <div class="experience-card">
+                <img src="DESIGN/bendahara.png" alt="Profile Picture" class="profile-img" />
+                <h3>Treasurer of Organization <br><span>| Campoer Seni</span></h3>
+                <button class="learn-more-btn" data-detail="details-1">Learn More</button>
+                <div class="details" id="details-1" style="display: none;">
+                    <ul>
+                        <li>Enhanced financial reporting processes, providing stakeholders with accurate and timely information for decision-making purposes.</li>
+                        <li>Implemented strategies to improve organizational financial performance.</li>
+                        <li>Reduced operating costs by identifying and implementing cost-saving measures across the organization.</li>
+                        <li>Increased revenue from an initial surplus of 1 million rupiah to 25 million rupiah through effective financial strategies and initiatives.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="experience-card">
+                <img src="DESIGN/vise.png" alt="Profile Picture" class="profile-img" />
+                <h3>Vice Chair of Event <br><span>| Mini Dance Show 2024</span></h3>
+                <button class="learn-more-btn" data-detail="details-2">Learn More</button>
+                <div class="details" id="details-2" style="display: none;">
+                    <ul>
+                        <li>Supported the Chair in overseeing and executing all aspects of event management.</li>
+                        <li>Conceptualized and designed event themes and choreography, and instructed talents in their performance.</li>
+                        <li>Oversaw logistical arrangements and proactively resolved issues to ensure the event's success.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="experience-card">
+                <img src="DESIGN/wakil.png" alt="Profile Picture" class="profile-img" />
+                <h3>Ticketing Coordinator <br><span>| Mini Dance Show 2024</span></h3>
+                <button class="learn-more-btn" data-detail="details-3">Learn More</button>
+                <div class="details" id="details-3" style="display: none;">
+                    <ul>
+                        <li>Designed and implemented a website to facilitate online ticket purchases for the audience.</li>
+                        <li>Entered data, generated analytical reports, and produced tracking reports.</li>
+                        <li>Improved team productivity with regular communication and progress updates, fostering a collaborative work environment.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="experience-card">
+                <img src="DESIGN/acara23.png" alt="Profile Picture" class="profile-img" />
+                <h3>Event Committee Member <br><span>| Mini Dance Show 2023</span></h3>
+                <button class="learn-more-btn" data-detail="details-3">Learn More</button>
+                <div class="details" id="details-3" style="display: none;">
+                    <ul>
+                        <li>Assisted in organizing and executing the Mini Dance Show, ensuring smooth coordination between teams and performers.</li>
+                        <li>Managed event logistics, including venue setup, audience seating, and performer flow.</li>
+                        <li>Maintained accurate records of event schedules, internal communications, and task progress.</li>
+                        <li>Provided on-site support during the event to handle real-time issues and maintain a positive audience experience.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="experience-card">
+                <img src="DESIGN/tiketmds23.png" alt="Profile Picture" class="profile-img" />
+                <h3>Ticketing Coordinator <br><span>| Mini Dance Show 2023</span></h3>
+                <button class="learn-more-btn" data-detail="details-3">Learn More</button>
+                <div class="details" id="details-3" style="display: none;">
+                    <ul>
+                        <li>Using spreadsheets and Google Apps Script to manage transactions with customers.</li>
+                        <li>Automated the distribution of QR codes via email for ticket confirmation and entry.</li>
+                        <li>Managed data entry, generated analytical reports, and created tracking systems for ticket sales.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="experience-card">
+                <img src="DESIGN/pdd.png" alt="Profile Picture" class="profile-img" />
+                <h3>Design and Media Member <br><span>| Dies Natalies 2023</span></h3>
+                <button class="learn-more-btn" data-detail="details-3">Learn More</button>
+                <div class="details" id="details-3" style="display: none;">
+                    <ul>
+                        <li>Captured high-quality photos and videos throughout the event to document key moments and behind-the-scenes activities.</li>
+                        <li>Organized and archived all visual materials for post-event publication and internal records.</li>
+                        <li>Ensured timely coverage of important segments, including performances, guest interactions, and team highlights.</li>
+          </ul>
+                </div>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="experience-card">
+                <img src="DESIGN/grupmentor.png" alt="Profile Picture" class="profile-img" />
+                <h3>Group Mentor <br><span>| Basic Leadership Training of Campoer Seni </span></h3>
+                <button class="learn-more-btn" data-detail="details-3">Learn More</button>
+                <div class="details" id="details-3" style="display: none;">
+                    <ul>
+                        <li>Guided and supported a group of participants throughout the leadership training program, fostering a positive and inclusive learning environment.</li>
+                        <li>Facilitated discussions and group activities to help participants develop leadership, communication, and teamwork skills.</li>
+                        <li>Monitored participant engagement and progress, providing feedback and motivation when needed.</li>
+                        <li>Collaborated with fellow mentors and the organizing committee to ensure smooth program flow and effective session delivery.</li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 8 -->
+            <div class="experience-card">
+                <img src="me.jpg" alt="Profile Picture" class="profile-img" />
+                <h3>Secretary of Event <br><span>| Open Recruitment of Campoer Seni</span></h3>
+                <button class="learn-more-btn" data-detail="details-3">Learn More</button>
+                <div class="details" id="details-3" style="display: none;">
+                    <ul>
+                        <li>Maintained accurate records of all event-related documents, including participant applications, schedules, and meeting notes.</li>
+                        <li>Conducted follow-up communications with applicants to provide updates and answer any questions regarding the recruitment process.</li>
+                        <li>Recorded and distributed minutes from planning meetings, capturing key decisions and action items for the committee.</li>
+                        <li>Developed and designed the registration form for new members, ensuring it was user-friendly and collected all necessary information.</li>
+                        <li>Compiled and reported on the number of applicants who registered, providing insights for the committee on recruitment effectiveness.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Tambahkan kartu lainnya sesuai kebutuhan -->
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <p id="modal-text">Default Text</p>
+        </div>
+    </div>
+    
+
+
+    <section id="contact" class="contact-section">
+        <h2>{ contact_me }</h2>
+        <p>Feel free to reach out to collaborate or ask questions!</p>
+        
+        <a href="mailto:jeanettewalangitanfx@email.com?subject=Collaboration%20Request&body=Hi%20Jeanette,%20I%20would%20like%20to%20discuss..." class="email-link">
+            📧 Click here to send me an email
+        </a>
+        </section>
+
+
+    <script>
+        function showModal(image, title, issuer, year) {
+            document.getElementById('modal-img').src = 'certificates/' + image;
+            document.getElementById('modal-title').textContent = title;
+            document.getElementById('modal-info').textContent = issuer + ' • ' + year;
+            document.getElementById('certificate-modal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('certificate-modal').style.display = 'none';
+        }
+
+        function filterCertificates(category) {
+            let cards = document.querySelectorAll('.certificate-card');
+            cards.forEach(card => {
+                if (card.classList.contains(category)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+    <script>
+        // Fungsi untuk menangani tombol "Learn More"
+        // Fungsi untuk menampilkan modal dengan teks dinamis
+        document.addEventListener("DOMContentLoaded", function () {
+            const learnMoreBtn = document.getElementById("learn-more-btn");
+            const hiddenDetails = document.getElementById("hidden-details");
+
+            // Pastikan elemen hidden-details disembunyikan awalnya
+            hiddenDetails.style.display = "none";
+
+            learnMoreBtn.addEventListener("click", function () {
+                if (hiddenDetails.style.display === "none" || hiddenDetails.style.display === "") {
+                    hiddenDetails.style.display = "block"; // Tampilkan detail
+                } else {
+                    hiddenDetails.style.display = "none"; // Sembunyikan detail
+                }
+            });
+        });
+        document.querySelectorAll('.learn-more-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const detailId = button.getAttribute('data-detail'); // Ambil ID detail
+                const detailContent = document.querySelector(`#${detailId}`).innerHTML; // Ambil konten detail
+                
+                // Set teks di dalam modal
+                document.getElementById('modal-text').innerHTML = detailContent;
+
+                // Tampilkan modal
+                const modal = document.getElementById('modal');
+                modal.style.display = 'flex';
+            });
+        });
+
+        // Fungsi untuk menutup modal
+        document.querySelector('.close-btn').addEventListener('click', () => {
+            document.getElementById('modal').style.display = 'none';
+        });
+
+        // Menutup modal ketika klik di luar konten modal
+        window.addEventListener('click', (event) => {
+            const modal = document.getElementById('modal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Fungsi untuk menutup modal
+        document.querySelector('.close-btn').addEventListener('click', () => {
+            document.getElementById('modal').style.display = 'none';
+        });
+
+        // Menutup modal ketika klik di luar konten modal
+        window.addEventListener('click', (event) => {
+            const modal = document.getElementById('modal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+    </script>
+    <script>
+        function toggleDetails(id) {
+            const detailSection = document.getElementById(id);
+            const isVisible = detailSection.style.display === "block";
+            detailSection.style.display = isVisible ? "none" : "block";
+        }
+    </script>
+    <script>
+        function toggleMenu() {
+            document.getElementById("nav-links").classList.toggle("active");
+        }
+    </script>
+
+    <footer>
+        &copy; 2025 Jeanette Walangitan. All rights reserved.
+    </footer>
+</body>
+</html>

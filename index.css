@@ -122,6 +122,25 @@ footer {
     font-size: 0.9rem;
 }
 
+
+#mysteryContainer {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.mystery-img {
+    position: absolute;
+    width: 100px;
+    opacity: 0;
+    filter: blur(10px);
+    animation: appearMystery 2s ease-in-out forwards;
+}
+
+
+
+
 /* About Section */
 #about {
     padding: 4rem 2rem;
@@ -717,6 +736,22 @@ ul {
     list-style-type: disc;
     color: #333;
 }
+
+.email-link {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #4f46e5;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .email-link:hover {
+    background-color: #4338ca;
+  }
+  
 
 /* Responsiveness */
 @media (max-width: 992px) {

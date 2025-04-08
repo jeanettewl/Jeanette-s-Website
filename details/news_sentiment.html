@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Proyek</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("project-title").textContent = localStorage.getItem('title');
+            document.getElementById("project-description").textContent = localStorage.getItem('description');
+            document.getElementById("project-technologies").textContent = "Teknologi: " + localStorage.getItem('technologies');
+            document.getElementById("project-skills").textContent = "Keahlian: " + localStorage.getItem('skills');
+        });
+    </script> -->
+</head>
+<body class="bg-black text-white">
+
+    <!-- Header Section -->
+    <div class="max-w-5xl mx-auto py-10 px-6">
+        <div class="flex items-center space-x-4 text-gray-300">
+            <span class="bg-green-700 px-3 py-1 rounded-full text-sm">Data Science + NLP</span>
+            <span class="text-sm">13 Februari 2024</span>
+        </div>
+        <h1 id="project-title" class="text-5xl font-bold mt-4">News Sentiment Classification using NLP & Web Scraping
+
+        </h1>
+    </div>
+
+    <!-- Featured Image -->
+    <div class="max-w-5xl mx-auto">
+        <img src="../DESIGN/wordcloud.png" alt="Project Image" class="w-full rounded-lg shadow-lg">
+    </div>
+
+    <!-- Project Details Section -->
+    <section class="max-w-5xl mx-auto py-10 px-6">
+        <p id="project-description" class="text-gray-300 text-lg leading-relaxed">
+            Developing a sentiment analysis system using NLP and Machine Learning to classify text sentiment as positive, negative, or neutral.
+        </p>
+        </p>
+        <p id="project-technologies" class="text-gray-400 mt-4">
+            Technologies: Python 🐍, BeautifulSoup 🌍, NLTK 🧠, Sastrawi 🔍, Pandas 📊
+        </p>
+        <p id="project-skills" class="text-gray-400 mt-2">
+            Skills: ✅ Web Scraping & Data Extraction, ✅ NLP & Text Processing, ✅ Sentiment Analysis & Classification
+        </p>
+
+        <!-- Additional Project Description -->
+        <p class="text-gray-300 mt-6">
+            This project focuses on classifying news articles based on sentiment (Neutral, Opposing, or Supporting) using Natural Language Processing (NLP). News content is scraped from online sources using BeautifulSoup, then preprocessed with NLTK and Sastrawi for tokenization, stopword removal, and stemming. The classification is performed by matching keywords against predefined sentiment-based word lists.
+        </p>
+        
+        <p class="text-gray-300 mt-6">
+            The system provides insights into how different media outlets present information and can be applied in media bias analysis, public opinion research, and automated news categorization.
+        </p>
+        
+
+        <a href="https://github.com/jeanettewl/news_sentiment/" class="mt-4 inline-block bg-blue-500 text-white px-10 py-3 rounded-lg text-lg font-bold hover:bg-blue-600 transition">
+            Repository
+        </a>
+
+        <a href="../it-project.html" class="mt-8 inline-block bg-green-500 text-white px-10 py-3 rounded-lg text-lg font-bold hover:bg-green-600 transition">
+            Home
+        </a>
+    </section>
+
+</body>
+</html>
