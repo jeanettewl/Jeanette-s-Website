@@ -308,7 +308,9 @@ body {
     margin-top: 15px;
     max-width: 100%;
     width: fit-content;
-    white-space: nowrap;
+    text-align: center;
+    word-wrap: break-word; /* Biar kata panjang bisa pecah */
+    white-space: normal;    /* Biar bisa multi-line */
 }
 
 /* Hover Effect */
@@ -323,8 +325,11 @@ body {
     .btn-details {
         font-size: 0.9rem;
         padding: 10px 18px;
+        display: block;
+        width: 100%; /* Biarkan dia adaptif penuh */
     }
 }
+
 
 
 /* Carousel Container */
