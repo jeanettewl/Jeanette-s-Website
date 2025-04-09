@@ -294,7 +294,6 @@ body {
     }
 }
 
-
 /* Button Styling */
 .btn-details {
     background: linear-gradient(135deg, #ff6f61, #ff3d36);
@@ -306,14 +305,27 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     text-transform: uppercase;
-    margin-top: 15px; /* Space between text and button */
+    margin-top: 15px;
+    max-width: 100%;
+    width: fit-content;
+    white-space: nowrap;
 }
 
+/* Hover Effect */
 .btn-details:hover {
     background: linear-gradient(135deg, #ff3d36, #e60000);
     transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
+
+/* Responsive (Mobile) */
+@media (max-width: 640px) {
+    .btn-details {
+        font-size: 0.9rem;
+        padding: 10px 18px;
+    }
+}
+
 
 /* Carousel Container */
 .carousel {
