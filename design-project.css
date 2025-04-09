@@ -115,6 +115,22 @@ body {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
+@media (max-width: 768px) {
+    .portfolio-gallery {
+        padding: 30px 15px;
+    }
+
+    .filter-buttons {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .filter-buttons button {
+        flex: 1 1 45%;
+        font-size: 0.85rem;
+        padding: 8px 12px;
+    }
+}
 
 
 
@@ -266,6 +282,18 @@ body {
     font-size: 1.2rem;
     margin-bottom: 15px;
 }
+
+@media (max-width: 768px) {
+    .overlay {
+        padding: 5px;
+    }
+
+    .overlay p {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+}
+
 
 /* Button Styling */
 .btn-details {

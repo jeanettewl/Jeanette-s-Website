@@ -211,6 +211,45 @@ footer {
     color: #50fa7b;
 }
 
+@media screen and (max-width: 768px) {
+    #about {
+        padding: 3rem 1rem;
+    }
+
+    #about h2 {
+        font-size: 2rem;
+    }
+
+    .about-container {
+        flex-direction: column;
+    }
+
+    .about-photo {
+        width: 180px;
+        height: 180px;
+    }
+
+    .about-text {
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .social-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .social-icon {
+        font-size: 1rem;
+    }
+
+    .social-icon i {
+        font-size: 1.3rem;
+    }
+}
+
+
 /* Intro Section */
 .intro {
     text-align: center;
@@ -572,6 +611,61 @@ h2 {
         border-radius: 5px;
     }
 
+@media (max-width: 768px) {
+        /* Umum */
+        section {
+            padding: 2rem 1rem;
+        }
+    
+        h2 {
+            font-size: 2rem;
+        }
+    
+        /* Grid sertifikat jadi satu kolom */
+        .certificate-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+    
+        /* Kartu sertifikat */
+        .certificate-card {
+            padding: 1rem;
+        }
+    
+        .certificate-card img {
+            height: 160px;
+        }
+    
+        /* Modal responsif */
+        .modal-content {
+            width: 90%;
+            padding: 1.5rem;
+        }
+    
+        /* Popup responsif */
+        .popup {
+            width: 85%;
+            padding: 15px;
+        }
+    
+        .popup-header {
+            font-size: 1rem;
+        }
+    
+        .close-btn {
+            font-size: 1.5rem;
+        }
+    
+        .popup-content {
+            max-height: 300px;
+        }
+    
+        .button {
+            padding: 8px 12px;
+            font-size: 0.9rem;
+        }
+    }
+    
 
 
 
@@ -765,6 +859,71 @@ ul {
         grid-template-columns: 1fr;
     }
 }
+
+@media (max-width: 768px) {
+    /* Section dan Heading */
+    #organizational-experience {
+        padding: 2rem 1rem;
+    }
+
+    #organizational-experience h2 {
+        font-size: 1.8rem;
+    }
+
+    /* Grid layout satu kolom */
+    .experience-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    /* Card Styling */
+    .experience-card {
+        padding: 1rem;
+        width: 100%;
+    }
+
+    .experience-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .experience-card h3 span {
+        font-size: 0.9rem;
+    }
+
+    .experience-card ul li {
+        font-size: 0.95rem;
+    }
+
+    /* Gambar profil */
+    .profile-img {
+        height: 380px;
+    }
+
+    /* Button */
+    .learn-more-btn {
+        font-size: 0.95rem;
+        padding: 0.7rem 1.2rem;
+    }
+
+    /* Modal */
+    .modal-content {
+        padding: 1rem;
+        max-width: 90%;
+    }
+
+    .close-btn {
+        font-size: 1.5rem;
+        top: 8px;
+        right: 10px;
+    }
+
+    /* Email link */
+    .email-link {
+        font-size: 0.95rem;
+        padding: 10px 20px;
+    }
+}
+
 
 /* Contact Section */
 .contact-section {

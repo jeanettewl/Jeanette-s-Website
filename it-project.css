@@ -144,3 +144,50 @@
     transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
+
+
+@media (max-width: 768px) {
+    .it-project-hero {
+        padding: 60px 15px;
+    }
+
+    .it-project-hero h2 {
+        font-size: 2rem;
+    }
+
+    .it-project-hero p {
+        font-size: 1rem;
+    }
+
+    .it-project-hero .btn {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+
+    .it-projects-gallery h3 {
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .project-item {
+        height: 250px;
+    }
+
+    .overlay h4 {
+        font-size: 1.2rem;
+    }
+
+    .overlay p {
+        font-size: 0.9rem;
+    }
+
+    .btn-details {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+}
